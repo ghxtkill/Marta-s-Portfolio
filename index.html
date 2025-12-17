@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Marta - Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;700&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <script type="text/javascript">
+        
+    </script>
+
+    <style type="text/css">
+
+        body {
+            margin: 0;
+            font-family: 'Jost', sans-serif; 
+            color: #E0FFFF; 
+            background-color: #0A1C2B; 
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Orbitron', sans-serif; 
+            color: #00BFFF; 
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 0.5em;
+        }
+
+        h2 {
+            font-size: 2.2em;
+            margin-bottom: 1em;
+        }
+
+        h3 {
+            font-size: 1.8em;
+            color: #8A2BE2; 
+        }
+
+        p {
+            margin-bottom: 1em;
+            text-align: center;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0 15px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(10, 28, 43, 0.9);
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .navbar-brand {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.8em;
+            color: #00BFFF;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        .navbar-nav {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .nav-item {
+            margin-left: 30px;
+        }
+
+        .nav-link {
+            color: #E0FFFF;
+            text-decoration: none;
+            font-size: 1.1em;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: #8A2BE2;
+        }
+
+        .header {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(rgba(10, 28, 43, 0.7), rgba(10, 28, 43, 0.7)), url('https://wallpapers.com/images/hd/avatar-pandora-5e6xhi1etjmtbecr.jpg') no-repeat center center;
+            background-size: cover;
+            padding-top: 80px;
+        }
+
+        .header h1 {
+            font-size: 4.5em;
+            color: #00BFFF;
+            text-shadow: 0 0 15px rgba(0, 191, 255, 0.8);
+            margin-bottom: 20px;
+        }
+
+        .header p {
+            font-size: 1.5em;
+            color: #E0FFFF;
+            max-width: 700px;
+            margin-top: 20px;
+            text-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+        }
+
+        
+        section {
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        section:nth-child(odd) {
+            background-color: #0A1C2B;
+        }
+
+        section:nth-child(even) {
+            background-color: #05101A;
+        }
+
+        
+        .about-me {
+            background: linear-gradient(rgba(5, 16, 26, 0.8), rgba(5, 16, 26, 0.8)), url('https://i.pinimg.com/736x/3f/fb/ee/3ffbee5dedb84b839357607be8998684.jpg') no-repeat center center fixed;
+            background-size: cover;
+            padding: 100px 0;
+        }
+
+        .about-me .content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .about-me .text {
+            flex: 1;
+            min-width: 300px;
+            padding: 20px;
+            text-align: left;
+            margin-right: 30px;
+        }
+        
+        .about-me .text h3 {
+            text-align: left;
+            color: #00BFFF;
+        }
+
+        .about-me .text p {
+            text-align: left;
+            color: #B0C4DE;
+            max-width: none;
+            padding: 0;
+        }
+
+        .about-me .skills {
+            flex: 1;
+            min-width: 300px;
+            padding: 20px;
+            background-color: rgba(0, 191, 255, 0.1);
+            border-radius: 15px;
+            backdrop-filter: blur(5px);
+            box-shadow: 0 0 20px rgba(0, 191, 255, 0.3);
+        }
+
+        .about-me .skills h3 {
+            text-align: center;
+            color: #8A2BE2;
+        }
+
+        .skill-list {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+        }
+
+        .skill-list li {
+            background-color: rgba(138, 43, 226, 0.2);
+            margin: 10px 0;
+            padding: 10px 15px;
+            border-radius: 8px;
+            font-size: 1.1em;
+            color: #E0FFFF;
+            border-left: 3px solid #8A2BE2;
+        }
+
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .gallery-item {
+            border: 5px solid #8A2BE2;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 15px rgba(138, 43, 226, 0.4);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 0 25px rgba(138, 43, 226, 0.7);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+            filter: brightness(0.9) saturate(1.1);
+            transition: filter 0.3s ease;
+        }
+
+        .gallery-item img:hover {
+            filter: brightness(1) saturate(1.2);
+        }
+
+        
+        .projects .gallery-item {
+            border: 5px solid #00BFFF; 
+            box-shadow: 0 0 15px rgba(0, 191, 255, 0.4); 
+        }
+        .projects .gallery-item:hover {
+            box-shadow: 0 0 25px rgba(0, 191, 255, 0.7);
+        }
+
+        
+        .contact {
+            background-color: #0A1C2B;
+            padding: 60px 0;
+            border-top: 2px solid #00BFFF;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .contact-item {
+            text-align: center;
+            flex-basis: 250px;
+            background-color: rgba(0, 191, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 191, 255, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .contact-item i {
+            font-size: 2em;
+            color: #00BFFF;
+            margin-bottom: 10px;
+        }
+        
+        .contact-item p {
+            margin: 0;
+            color: #B0C4DE;
+        }
+
+        .footer-text {
+            text-align: center;
+            margin-top: 50px;
+            color: #B0C4DE;
+            font-size: 0.9em;
+        }
+
+        
+        @media (max-width: 992px) {
+            .navbar-nav {
+                display: none;
+            }
+
+            .navbar .container {
+                justify-content: center;
+            }
+
+            .navbar-brand {
+                font-size: 1.5em;
+            }
+
+            .header h1 {
+                font-size: 3.5em;
+            }
+
+            .header p {
+                font-size: 1.2em;
+            }
+
+            .about-me .content {
+                flex-direction: column;
+            }
+
+            .about-me .text, .about-me .skills {
+                margin-right: 0;
+                margin-bottom: 30px;
+                max-width: 90%;
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.8em;
+            }
+            h2 {
+                font-size: 1.8em;
+            }
+            h3 {
+                font-size: 1.5em;
+            }
+
+            .navbar-brand {
+                font-size: 1.2em;
+            }
+
+            .header h1 {
+                font-size: 2.8em;
+            }
+
+            .header p {
+                font-size: 1em;
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            }
+
+            .contact-item {
+                flex-basis: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2.2em;
+            }
+            h2 {
+                font-size: 1.5em;
+            }
+            h3 {
+                font-size: 1.3em;
+            }
+
+            .navbar-brand {
+                font-size: 1em;
+            }
+            .header h1 {
+                font-size: 2.2em;
+            }
+
+            .header p {
+                font-size: 0.9em;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container">
+            <a href="#header" class="navbar-brand">Marta - Portfolio</a>
+            <ul class="navbar-nav">
+                <li class="nav-item"><a href="#about-me" class="nav-link">Sobre Mí</a></li>
+                <li class="nav-item"><a href="#gallery" class="nav-link">Galería</a></li>
+               <li class="nav-item"><a href="#contact" class="nav-link">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header id="header" class="header">
+        <h1>Bienvenidos a mi Portfolio</h1>
+        <p>Un Viaje a través de la Creatividad</p>
+        <p>Aquí encontrarás una muestra de mi talento y mis proyectos.</p>
+    </header>
+
+    <section id="about-me" class="about-me">
+        <div class="container content">
+            <div class="text">
+                <h3>Sobre Mí</h3>
+                <p>¡Hola, visitante! Soy Marta, tengo 20 años, valoro la conexión profunda con mi entorno creativo. Mi pasión por el diseño y la tecnología me impulsa a crear proyectos que combinan estética y funcionalidad.</p>
+                <p>Me considero una persona creativa y organizada. Disfruto aprendiendo nuevas herramientas y estoy lista para sumergirme en cualquier desafío creativo que se presente. ¡Echa un vistazo a lo que sé hacer!</p>
+            </div>
+            <div class="skills">
+                <h3>Mis Habilidades</h3>
+                <ul class="skill-list">
+                    <li>Ilustración Digital y Tradicional</li>
+                    <li>Diseño Conceptual de Personajes (Character Design)</li>
+                    <li>Diseño Gráfico Publicitario (Cartelería)</li>
+                    <li>Narrativa Creativa y Storytelling</li>
+                    <li>Adobe Photoshop</li>
+                    <li>Creación de videos</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="gallery">
+        <h2>Mi Jardín de Proyectos</h2>
+        <p>Una muestra de mi trabajo en diseño gráfico en carteles visuales.</p>
+        <div class="gallery-grid container">
+            <a class="group3 gallery-item" href="https://i.pinimg.com/736x/49/6d/a5/496da58d7c2d8fe99e624af62cf485c3.jpg"><img src="https://i.pinimg.com/736x/49/6d/a5/496da58d7c2d8fe99e624af62cf485c3.jpg" alt="Obra 1"></a>
+
+            <a class="group3 gallery-item" href="https://i.pinimg.com/736x/bb/2a/9e/bb2a9ea811914e25525eaf40f508160f.jpg"><img src="https://i.pinimg.com/736x/bb/2a/9e/bb2a9ea811914e25525eaf40f508160f.jpg" alt="Obra 2"></a>
+
+            <a class="group3 gallery-item" href="https://i.pinimg.com/736x/85/95/67/859567a824a33104e7fcabe695d365b5.jpg"><img src="https://i.pinimg.com/736x/85/95/67/859567a824a33104e7fcabe695d365b5.jpg" alt="Obra 3"></a>
+
+            <a class="group3 gallery-item" href="https://i.pinimg.com/736x/5b/25/cc/5b25cc75a8abb1a0284730215d9ec761.jpg"><img src="https://i.pinimg.com/736x/5b/25/cc/5b25cc75a8abb1a0284730215d9ec761.jpg" alt="Obra 4"></a>
+
+            <a class="group3 gallery-item" href="https://i.pinimg.com/736x/3a/65/7a/3a657a673fe5ff74bc619c29dda94496.jpg"><img src="https://i.pinimg.com/736x/3a/65/7a/3a657a673fe5ff74bc619c29dda94496.jpg" alt="Obra 5"></a>
+
+            <a class="group3 gallery-item" href="https://i.pinimg.com/736x/5a/81/a8/5a81a864a1807217c4c60bb02df458ab.jpg"><img src="https://i.pinimg.com/736x/5a/81/a8/5a81a864a1807217c4c60bb02df458ab.jpg" alt="Obra 6"></a>
+            <a class="group3 gallery-item" href="https://i.pinimg.com/736x/10/bd/2b/10bd2b5d0918bf74fc0008dc7929f8fa.jpg"><img src="https://i.pinimg.com/736x/10/bd/2b/10bd2b5d0918bf74fc0008dc7929f8fa.jpg" alt="Obra 7"></a>
+
+            <a class="group3 gallery-item" href="https://i.pinimg.com/736x/52/d0/21/52d0212724b4cd468c2db913b2dceea1.jpg"><img src="https://i.pinimg.com/736x/52/d0/21/52d0212724b4cd468c2db913b2dceea1.jpg" alt="Obra 8"></a>
+
+        </div>
+    </section>
+
+    <section id="projects" class="gallery projects">
+        <h2>Dibujos</h2>
+        <p>Una serie de dibujos realizados por mi sobre mis peliculas y series favoritas.</p>
+        <div class="gallery-grid container">
+            <a class="group3 gallery-item" href="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/c7413ab5-ff39-4c26-a64a-57209dea8e27/dgo68uf-8b9348f4-36f1-4700-a1f9-f83c6006804d.jpg/v1/fit/w_828,h_1100,q_70,strp/ghostface__by_stevemcu_dgo68uf-414w-2x.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NDA4MCIsInBhdGgiOiIvZi9jNzQxM2FiNS1mZjM5LTRjMjYtYTY0YS01NzIwOWRlYThlMjcvZGdvNjh1Zi04YjkzNDhmNC0zNmYxLTQ3MDAtYTFmOS1mODNjNjAwNjgwNGQuanBnIiwid2lkdGgiOiI8PTMwNzIifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.Q7hSaVEfdUZ-bzkeLKRA3H9yOqi8N9_yvDZSVA0O2ME"><img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/c7413ab5-ff39-4c26-a64a-57209dea8e27/dgo68uf-8b9348f4-36f1-4700-a1f9-f83c6006804d.jpg/v1/fit/w_828,h_1100,q_70,strp/ghostface__by_stevemcu_dgo68uf-414w-2x.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NDA4MCIsInBhdGgiOiIvZi9jNzQxM2FiNS1mZjM5LTRjMjYtYTY0YS01NzIwOWRlYThlMjcvZGdvNjh1Zi04YjkzNDhmNC0zNmYxLTQ3MDAtYTFmOS1mODNjNjAwNjgwNGQuanBnIiwid2lkdGgiOiI8PTMwNzIifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.Q7hSaVEfdUZ-bzkeLKRA3H9yOqi8N9_yvDZSVA0O2ME" alt="dibujo 1"></a>
+            
+            <a class="group3 gallery-item" href="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/c7413ab5-ff39-4c26-a64a-57209dea8e27/dhvcjny-0b00a90d-2cb7-4867-afb0-d2339fac1143.jpg/v1/fit/w_828,h_1100,q_70,strp/neteyam_sully_from_avatar__by_stevemcu_dhvcjny-414w-2x.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTcwMCIsInBhdGgiOiIvZi9jNzQxM2FiNS1mZjM5LTRjMjYtYTY0YS01NzIwOWRlYThlMjcvZGh2Y2pueS0wYjAwYTkwZC0yY2I3LTQ4NjctYWZiMC1kMjMzOWZhYzExNDMuanBnIiwid2lkdGgiOiI8PTEyODAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.hb8aZyt-ul9N1_Ia1OjgX30zTJvQwHbcywrybXdI3h8"><img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/c7413ab5-ff39-4c26-a64a-57209dea8e27/dhvcjny-0b00a90d-2cb7-4867-afb0-d2339fac1143.jpg/v1/fit/w_828,h_1100,q_70,strp/neteyam_sully_from_avatar__by_stevemcu_dhvcjny-414w-2x.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTcwMCIsInBhdGgiOiIvZi9jNzQxM2FiNS1mZjM5LTRjMjYtYTY0YS01NzIwOWRlYThlMjcvZGh2Y2pueS0wYjAwYTkwZC0yY2I3LTQ4NjctYWZiMC1kMjMzOWZhYzExNDMuanBnIiwid2lkdGgiOiI8PTEyODAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.hb8aZyt-ul9N1_Ia1OjgX30zTJvQwHbcywrybXdI3h8" alt="dibujo 2"></a>
+
+            <a class="group3 gallery-item" href="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/c7413ab5-ff39-4c26-a64a-57209dea8e27/dhf3usk-cdca354c-e819-45d6-b6f2-8bbeb0ed5eb7.jpg/v1/fit/w_828,h_1100,q_70,strp/spiderman_by_stevemcu_dhf3usk-414w-2x.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NDA4MCIsInBhdGgiOiIvZi9jNzQxM2FiNS1mZjM5LTRjMjYtYTY0YS01NzIwOWRlYThlMjcvZGhmM3Vzay1jZGNhMzU0Yy1lODE5LTQ1ZDYtYjZmMi04YmJlYjBlZDVlYjcuanBnIiwid2lkdGgiOiI8PTMwNzIifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.r4Xm4o1jZ6aLnifrMQYw2aYGW7h0pbwS_ps1FtdtYBc"><img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/c7413ab5-ff39-4c26-a64a-57209dea8e27/dhf3usk-cdca354c-e819-45d6-b6f2-8bbeb0ed5eb7.jpg/v1/fit/w_828,h_1100,q_70,strp/spiderman_by_stevemcu_dhf3usk-414w-2x.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NDA4MCIsInBhdGgiOiIvZi9jNzQxM2FiNS1mZjM5LTRjMjYtYTY0YS01NzIwOWRlYThlMjcvZGhmM3Vzay1jZGNhMzU0Yy1lODE5LTQ1ZDYtYjZmMi04YmJlYjBlZDVlYjcuanBnIiwid2lkdGgiOiI8PTMwNzIifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.r4Xm4o1jZ6aLnifrMQYw2aYGW7h0pbwS_ps1FtdtYBc" alt="dibujo 3"></a>
+            
+            <a class="group3 gallery-item" href="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/c7413ab5-ff39-4c26-a64a-57209dea8e27/dj82av2-7f085b91-b6c2-4660-a98c-bdd72491cc9d.jpg/v1/fit/w_828,h_1104,q_70,strp/timebomb_doodles_by_stevemcu_dj82av2-414w-2x.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTcwNiIsInBhdGgiOiIvZi9jNzQxM2FiNS1mZjM5LTRjMjYtYTY0YS01NzIwOWRlYThlMjcvZGo4MmF2Mi03ZjA4NWI5MS1iNmMyLTQ2NjAtYTk4Yy1iZGQ3MjQ5MWNjOWQuanBnIiwid2lkdGgiOiI8PTEyODAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.OULPmgeAuEW-pMUGp7oo6xOA8AtbhQZDVLevZTYQRQk"><img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/c7413ab5-ff39-4c26-a64a-57209dea8e27/dj82av2-7f085b91-b6c2-4660-a98c-bdd72491cc9d.jpg/v1/fit/w_828,h_1104,q_70,strp/timebomb_doodles_by_stevemcu_dj82av2-414w-2x.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTcwNiIsInBhdGgiOiIvZi9jNzQxM2FiNS1mZjM5LTRjMjYtYTY0YS01NzIwOWRlYThlMjcvZGo4MmF2Mi03ZjA4NWI5MS1iNmMyLTQ2NjAtYTk4Yy1iZGQ3MjQ5MWNjOWQuanBnIiwid2lkdGgiOiI8PTEyODAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.OULPmgeAuEW-pMUGp7oo6xOA8AtbhQZDVLevZTYQRQk" alt="dibujo 4"></a>
+
+            <a class="group3 gallery-item" href="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/c7413ab5-ff39-4c26-a64a-57209dea8e27/dhtz6gp-00fb62a1-1c41-4dd8-8e9f-68432e1f482b.jpg/v1/fit/w_828,h_1100,q_70,strp/tsireya_avatar_by_stevemcu_dhtz6gp-414w-2x.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTcwMCIsInBhdGgiOiIvZi9jNzQxM2FiNS1mZjM5LTRjMjYtYTY0YS01NzIwOWRlYThlMjcvZGh0ejZncC0wMGZiNjJhMS0xYzQxLTRkZDgtOGU5Zi02ODQzMmUxZjQ4MmIuanBnIiwid2lkdGgiOiI8PTEyODAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.Bp6mB3zRlwoM9mPrSptUsrPk7zjz7OrQ945_L7pMQis"><img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/c7413ab5-ff39-4c26-a64a-57209dea8e27/dhtz6gp-00fb62a1-1c41-4dd8-8e9f-68432e1f482b.jpg/v1/fit/w_828,h_1100,q_70,strp/tsireya_avatar_by_stevemcu_dhtz6gp-414w-2x.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTcwMCIsInBhdGgiOiIvZi9jNzQxM2FiNS1mZjM5LTRjMjYtYTY0YS01NzIwOWRlYThlMjcvZGh0ejZncC0wMGZiNjJhMS0xYzQxLTRkZDgtOGU5Zi02ODQzMmUxZjQ4MmIuanBnIiwid2lkdGgiOiI8PTEyODAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.Bp6mB3zRlwoM9mPrSptUsrPk7zjz7OrQ945_L7pMQis" alt="dibujo 5"></a>
+            
+            <a class="group3 gallery-item" href="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/c7413ab5-ff39-4c26-a64a-57209dea8e27/djgmsug-341c5338-6383-4637-8cb2-e1640bec47e4.jpg/v1/fill/w_894,h_894,q_70,strp/jinx_by_stevemcu_djgmsug-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTI4MCIsInBhdGgiOiIvZi9jNzQxM2FiNS1mZjM5LTRjMjYtYTY0YS01NzIwOWRlYThlMjcvZGpnbXN1Zy0zNDFjNTMzOC02MzgzLTQ2MzctOGNiMi1lMTY0MGJlYzQ3ZTQuanBnIiwid2lkdGgiOiI8PTEyODAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.HspIcfJKxoHilWwcC2Sez26vrb0hGWqA72Vbqn-_LW0"><img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/c7413ab5-ff39-4c26-a64a-57209dea8e27/djgmsug-341c5338-6383-4637-8cb2-e1640bec47e4.jpg/v1/fill/w_894,h_894,q_70,strp/jinx_by_stevemcu_djgmsug-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTI4MCIsInBhdGgiOiIvZi9jNzQxM2FiNS1mZjM5LTRjMjYtYTY0YS01NzIwOWRlYThlMjcvZGpnbXN1Zy0zNDFjNTMzOC02MzgzLTQ2MzctOGNiMi1lMTY0MGJlYzQ3ZTQuanBnIiwid2lkdGgiOiI8PTEyODAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.HspIcfJKxoHilWwcC2Sez26vrb0hGWqA72Vbqn-_LW0" alt="dibujo 6"></a>
+
+             <a class="group3 gallery-item" href="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/c7413ab5-ff39-4c26-a64a-57209dea8e27/dkzaord-c3114ed7-ede3-4126-9ddd-eac201104b97.jpg/v1/fit/w_828,h_1126,q_70,strp/neytiri_from_avatar__by_stevemcu_dkzaord-414w-2x.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTc0MSIsInBhdGgiOiIvZi9jNzQxM2FiNS1mZjM5LTRjMjYtYTY0YS01NzIwOWRlYThlMjcvZGt6YW9yZC1jMzExNGVkNy1lZGUzLTQxMjYtOWRkZC1lYWMyMDExMDRiOTcuanBnIiwid2lkdGgiOiI8PTEyODAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.8qjvmgzZ4DLXRZbtea8hkOZlSQEcCg-KMQH7Nj0dj54"><img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/c7413ab5-ff39-4c26-a64a-57209dea8e27/dkzaord-c3114ed7-ede3-4126-9ddd-eac201104b97.jpg/v1/fit/w_828,h_1126,q_70,strp/neytiri_from_avatar__by_stevemcu_dkzaord-414w-2x.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTc0MSIsInBhdGgiOiIvZi9jNzQxM2FiNS1mZjM5LTRjMjYtYTY0YS01NzIwOWRlYThlMjcvZGt6YW9yZC1jMzExNGVkNy1lZGUzLTQxMjYtOWRkZC1lYWMyMDExMDRiOTcuanBnIiwid2lkdGgiOiI8PTEyODAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.8qjvmgzZ4DLXRZbtea8hkOZlSQEcCg-KMQH7Nj0dj54" alt="dibujo 6"></a>
+             
+            <a class="group3 gallery-item" href="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/c7413ab5-ff39-4c26-a64a-57209dea8e27/dl3y7cp-63230808-37e4-4ecb-b2b5-711affa77342.png/v1/fill/w_1003,h_797,q_70,strp/baby_powder__by_stevemcu_dl3y7cp-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTAxNyIsInBhdGgiOiIvZi9jNzQxM2FiNS1mZjM5LTRjMjYtYTY0YS01NzIwOWRlYThlMjcvZGwzeTdjcC02MzIzMDgwOC0zN2U0LTRlY2ItYjJiNS03MTFhZmZhNzczNDIucG5nIiwid2lkdGgiOiI8PTEyODAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.yoVL2Eck2oG9uHGWPN7xOB4jqLFVnE8nTmTokVOZCLg"><img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/c7413ab5-ff39-4c26-a64a-57209dea8e27/dl3y7cp-63230808-37e4-4ecb-b2b5-711affa77342.png/v1/fill/w_1003,h_797,q_70,strp/baby_powder__by_stevemcu_dl3y7cp-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTAxNyIsInBhdGgiOiIvZi9jNzQxM2FiNS1mZjM5LTRjMjYtYTY0YS01NzIwOWRlYThlMjcvZGwzeTdjcC02MzIzMDgwOC0zN2U0LTRlY2ItYjJiNS03MTFhZmZhNzczNDIucG5nIiwid2lkdGgiOiI8PTEyODAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.yoVL2Eck2oG9uHGWPN7xOB4jqLFVnE8nTmTokVOZCLg" alt="dibujo 6"></a>
+
+        </div>
+    </section>
+
+
+    <section id="contact" class="contact">
+        <h2>Conecta Conmigo</h2>
+        <p>Si deseas colaborar o tienes alguna consulta, no dudes en establecer un "tswin" (conexión) conmigo.</p>
+        <div class="contact-info container">
+            <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <p>mdominguezblanco742@gmail.com</p> </div>
+            <div class="contact-item">
+                <i class="fas fa-phone-alt"></i>
+                <p>+34 615 97 51 79</p>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <p>España</p>
+            </div>
+        </div>
+        
+    
+        <p class="footer-text">© 2025 Marta. Todos los derechos reservados.</p>
+    </section>
+
+</body>
+</html>
